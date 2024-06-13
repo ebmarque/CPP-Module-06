@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:48:13 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/13 12:55:08 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:22:41 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 
 int main(void)
 {
-	Data	bene;
-	std::cout << "Data contained by bene.data: " << bene.data << std::endl;
-	std::cout << "Address of (Data)bene: " << &bene << std::endl;
+	Data *bene = new Data();
 
-	std::cout << "Serialize method -> Serializer::serialize(&bene): " 
-			  << Serializer::serialize(&bene) << std::endl;
-	std::cout << "Serialize method -> Serializer::deserialize(Serializer::serialize(bene)): " 
-			  << Serializer::deserialize(Serializer::serialize(&bene)) << std::endl;
+	std::cout << "Data->name: " << bene->getName() << std::endl;
+	std::cout << "Data->age: " << bene->getAge() << std::endl;
+	std::cout << "Data value serialized to uintptr_t: : " << Serializer::serialize(bene) << std::endl;
 	
+	std::cout << "deserialize(serialize(data))->getName(): ";
+	std::cout << Serializer::deserialize(Serializer::serialize(bene))->getName() << std::endl;
+	std::cout << "deserialize(serialize(data))->getAge(): ";
+	std::cout << Serializer::deserialize(Serializer::serialize(bene))->getAge() << std::endl;
 
+	delete bene;
 	return (0);
 }

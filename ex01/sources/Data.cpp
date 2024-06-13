@@ -5,26 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 12:21:37 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/13 12:48:07 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/06/13 19:04:27 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/06/13 19:08:58 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Data.hpp"
 
-Data::Data() {
-	this->data = 42;
+Data::Data() 
+{
+	this->name = "Ebenezer Marquezine";
+	this->age = 26;
 }
 
-Data::Data(const Data& other) {	(void)other; }
+Data::Data(const Data& other) 
+{
+	this->age = other.age;
+	this->name = other.name;
+}
 
 Data& Data::operator=(const Data& other) 
 {
-	(void)other;
+	if (this != &other) 
+	{
+		this->age = other.age;
+		this->name = other.name;
+	}
 	return (*this);
 }
 
-Data::~Data() {}
+Data::~Data() 
+{
+	std::cout << this->name + " was destroyed." << std::endl; 	
+}
 
+std::string Data::getName(void) const
+{
+	return (this->name);
+}
 
-
+int Data::getAge(void) const
+{
+	return (this->age);
+}

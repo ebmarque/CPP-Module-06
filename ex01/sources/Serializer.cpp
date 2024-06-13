@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:18:11 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/13 12:51:54 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:10:49 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Serializer::~Serializer() {}
 
 uintptr_t Serializer::serialize(Data *ptr) 
 {
-	return (*reinterpret_cast<uintptr_t *>(ptr));
+	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
 Data *Serializer::deserialize(uintptr_t raw) 

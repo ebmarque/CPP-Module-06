@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:13:25 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/13 12:22:00 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/13 18:58:15 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SERIALIZER_HPP
 
 #include <iostream>
-#include <string>
+#include <stdint.h>
 
 #include "Data.hpp"
 
