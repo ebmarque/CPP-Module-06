@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:07:34 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/12 18:53:25 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:52:52 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@
 
 typedef enum {
 
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
-	P_INFF,
-	N_INFF,
-	NANF,
-	P_INF,
-	N_INF,
-	NAN,
+	_CHAR,
+	_INT,
+	_FLOAT,
+	_DOUBLE,
+	_P_INFF,
+	_N_INFF,
+	_NANF,
+	_P_INF,
+	_N_INF,
+	_NAN,
 	INVALID
 } TYPE;
 

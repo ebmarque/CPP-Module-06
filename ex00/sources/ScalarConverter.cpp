@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 17:08:59 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/06/12 18:55:59 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:52:52 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static bool isDouble(std::string str)
 static TYPE getType(std::string str)
 {
 	std::string	s_types[] = {"+inff", "-inff", "nanf", "+inf", "-inf", "nan"};
-	TYPE		types[] = {P_INFF, N_INFF, NANF, P_INF, N_INF, NAN};
+	TYPE		types[] = {_P_INFF, _N_INFF, _NANF, _P_INF, _N_INF, _NAN};
 	
 	for (size_t i = 0; i < 6; i++)
 	{
@@ -115,13 +115,13 @@ static TYPE getType(std::string str)
 			return (types[i]);
 	}
 	if (isChar(str))
-		return (CHAR);
+		return (_CHAR);
 	if (isInteger(str))
-		return (INT);
+		return (_INT);
 	if (isFloat(str))
-		return (FLOAT);
+		return (_FLOAT);
 	if (isDouble(str))
-		return (DOUBLE);
+		return (_DOUBLE);
 	return (INVALID);
 }
 
